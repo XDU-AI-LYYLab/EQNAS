@@ -30,8 +30,8 @@ By performing the Pauli z-operator on the output of the quantum neural network t
   After downloading, extract the dataset to the following directory:
 
   ```python
-~/path/to/EQNAS/dataset/mnist
-~/path/to/EQNAS/dataset/warship
+  ~/path/to/EQNAS/dataset/mnist
+  ~/path/to/EQNAS/dataset/warship
   ```
 
 # Environmental requirements
@@ -53,8 +53,8 @@ By performing the Pauli z-operator on the output of the quantum neural network t
   ```
 
 - To view details, please refer to the following resources:
-  - [MindSpore教程](https://www.mindspore.cn/tutorials/zh-CN/master/index.html)
-  - [MindQuantum教程](https://www.mindspore.cn/mindquantum/docs/en/r0.7/index.html)
+  - [MindSpore Tutorial](https://www.mindspore.cn/tutorials/zh-CN/master/index.html)
+  - [MindQuantum Tutorial](https://www.mindspore.cn/mindquantum/docs/en/r0.7/index.html)
   - [MindSpore Python API](https://www.mindspore.cn/docs/api/zh-CN/master/index.html)
 
 # Quick Start
@@ -92,26 +92,26 @@ By performing the Pauli z-operator on the output of the quantum neural network t
 ```bash
 ├── EQNAS
     ├── condalist.txt                   # Anaconda env list
-    ├── eqnas.py                        # 训练脚本
-    ├── eqnas.yaml                      # Anaconda 环境配置
-    ├── eval.py                         # 评估脚本
-    ├── README.md                       # EQNAS模型相关说明
-    ├── requirements.txt                # pip 包依赖
+    ├── eqnas.py                        # Script for training
+    ├── eqnas.yaml                      # Anaconda environment
+    ├── eval.py                         # Evaluation Script
+    ├── README.md                       # EQNAS README
+    ├── requirements.txt                # pip Package dependency
     ├── scripts
-    │   ├── run_eval.sh                 # 评估shell脚本
-    │   └── run_train.sh                # 训练shell脚本
+    │   ├── run_eval.sh                 # Evaluate shell script
+    │   └── run_train.sh                # Training shell script
     └── src
-        ├── dataset.py                  # 数据集生成
-        ├── loss.py                     # 模型损失函数
-        ├── metrics.py                  # 模型评价指标
+        ├── dataset.py                  # Dataset generator
+        ├── loss.py                     # Model loss function
+        ├── metrics.py                  # Model evaluation metrics
         ├── model
-        │   └── common.py               # Qnn量子神经网络创建
-        ├── qea.py                      # 量子进化算法
+        │   └── common.py               # Quantum neural network builing
+        ├── qea.py                      # Quantum evolutionary algorithm
         └── utils
-            ├── config.py               # 模型参数配置文件
-            ├── data_preprocess.py      # 数据预处理
-            ├── logger.py               # 日志构造器
-            └── train_utils.py          # 模型训练定义
+            ├── config.py               # Model parameter configuration file
+            ├── data_preprocess.py      # Data preprocessing
+            ├── logger.py               # Log Builder
+            └── train_utils.py          # Model Training Definition
 ```
 
 ## Script Parameters
@@ -164,8 +164,6 @@ For more configuration details, please refer to the `config.py` file in the `uti
 
   The above Python command will run in the background. You can use the `mnist_train. log` file in the current directory or/ View the results of the log files under the `.log/` directory.
 
-  训练结束后，您可在`eqnas.py`脚本所在目录下的`./weights/`目录下找到架构搜索过程中每一个模型对应的`best.ckpt、init.ckpt、latest.ckpt`文件以及`model.arch`模型架构文件。
-
   After the training is completed, you can find the `eqnas. py` script in the directory where it is located Find the `best.ckpt, init.ckpt, latest.ckpt` files and the `model.arch` model architecture files corresponding to each model during the architecture search process in the `weights/` directory.
 
 - Training Warship Dataset in GPU Environment
@@ -196,7 +194,7 @@ For more configuration details, please refer to the `config.py` file in the `uti
 
   The above Python command will run in the background, and you can view the results through the `mnist_eval.log` file.
 
-- Running and evaluating the Warship dataset in a GPU environment
+- Running and evaluating the Warship dataset in a GPU environment.
 
   Please refer to the evaluation of the mnist dataset.
 
@@ -204,8 +202,7 @@ For more configuration details, please refer to the `config.py` file in the `uti
 
 ### Export to MindIR
 
-- The quantum model created based on MindQuantum is currently not officially supported for export to this format
-- 但为了能够将量子线路进行保存，本项目中利用Python自带pickle数据序列化包，将架构搜索得到的每一个量子模型都保存为`./weights/model/model.arch`，您可以按照`eval.py`中的方法加载模型架构
+- The quantum model created based on MindQuantum is currently not officially supported for export to this format.
 - But in order to save quantum circuits, in this project, Python's built-in pickle data serialization package is used to save every quantum model obtained from architecture search as`/weights/model/model.arch`, you can load the model architecture according to the method in`eval. py`
 
 # Model Description
@@ -234,5 +231,5 @@ For more configuration details, please refer to the `config.py` file in the `uti
 
 # Random situation description
 
-- In the script `dataset.py`, when creating the ship data loader and shuffling the ship data, a random number seed was set
-- To ensure the randomness of mutation and crossover operations in quantum evolutionary algorithms, after setting the random number seed mentioned above, the random number seed was immediately reset at system time
+- In the script `dataset.py`, when creating the ship data loader and shuffling the ship data, a random number seed was set.
+- To ensure the randomness of mutation and crossover operations in quantum evolutionary algorithms, after setting the random number seed mentioned above, the random number seed was immediately reset at system time.
